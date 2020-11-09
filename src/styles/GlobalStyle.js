@@ -1,10 +1,22 @@
 import { createGlobalStyle } from 'styled-components'
 import media from 'styled-media-query';
-
+import blueUndercover from '../images/blueUndercover.svg'
 
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Khand:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+:root{
+--blue: #63c1f6;
+--salmon: #cd5a6a;
+--red: #ED363B;
+--gray: #C0CAD6;
+--btnBlue: #69AEEF;
+
+--dark: #3F3B3B;
+--lightGray: #EFEFEF;
+
+--bgBlue: rgb(99 193 246 / 0.1);
+
+}
 *{
   margin: 0;
   padding: 0;
@@ -16,35 +28,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: Roboto, sans-serif;
     background: ${props => (props.whiteBg ? 'white' : 'pink')};
     overflow-x: hidden;
+    font-size: 16px;
   }
+  h2,h3,h4,h5{
+    font-family: 'Lato', sans-serif
+  }
+
   .homeLogoSection{
     height: 100vh;
   }
   main{
-    background: #efefef;
+    background: white;
     overflow-x: hidden;
   }
-  .hamburger{
-    left: 100vw;
-    cursor: pointer;
-  }
-  .emptyP{
-    width: 60px;
-    height: 60px;
-  }
-  .tableSectionContainer{
-    min-height: 100vh;
-    height: 100vh;
-    background-color: #C0CAD6;
-    z-index: -50;
-    overflow: hidden;
-    .svgContainer{
-      background: transparent;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+  
   .homeContainer{
     ${media.greaterThan("small")`
     display: flex;
@@ -54,6 +51,25 @@ const GlobalStyle = createGlobalStyle`
   .layoutContainer{
     transform-origin: top left;
   }
+
+  .booksSection{
+    opacity: 0.67 !important;
+  }
+  .blueUndercover {
+    display: inline-block;
+    position: relative;
+    z-index: 20;
+    &:after{
+      display: inline-block;
+      content: url(${blueUndercover});
+      transform: scaleX(0.9);
+      position: absolute;
+      bottom: -10px;
+      left: -5px;
+      z-index: 19;
+    }
+  }
 `
+
 
 export default GlobalStyle;

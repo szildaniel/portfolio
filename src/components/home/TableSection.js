@@ -12,7 +12,6 @@ import ScrollSVG from "../../images/home/ScrollSVG.svg"
 const TableSection = () => {
   const height = use100vh();
   const calculatedPosition = height ? height / 8 : '50vh';
-  console.log(height)
   return (
     <Div100vh>
       <Comp.StyledSection>

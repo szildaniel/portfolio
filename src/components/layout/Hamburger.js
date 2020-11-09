@@ -16,7 +16,7 @@ const Hamburger = (props) => {
     }, [props.isOpen])
     return (
         <StyledCircleHamburger>
-            <div className="div" ref={iconRef}>
+            <div className="iconContainer" ref={iconRef}>
                 <img src={props.isOpen ? closeIcon : hamburgerIcon} alt="menu" />
             </div>
         </StyledCircleHamburger>

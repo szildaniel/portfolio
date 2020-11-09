@@ -68,6 +68,19 @@ export const StyledSection = styled.section`
   height: 100vh;
   background-color: #c0cad6;
   color: white;
+  .tableSectionContainer{
+    min-height: 100vh;
+    height: 100vh;
+    background-color: #C0CAD6;
+    z-index: -50;
+    overflow: hidden;
+    .svgContainer{
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   ${media.greaterThan("small")`
     width: 50vw;
     position: absolute;

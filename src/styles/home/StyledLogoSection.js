@@ -17,7 +17,7 @@ const StyledLogoSection = styled.section`
   .logoContainer {
     width: 180px;
     height: 311px;
-    background-color: #63c1f6;
+    background-color: var(--blue);
     display: flex;
     justify-content: center;
     align-items: center;

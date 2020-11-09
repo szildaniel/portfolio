@@ -3,12 +3,12 @@ import styled from 'styled-components';
 const StyledCircleHamburger = styled.div`
 width: 120px;
 height: 120px;
-background: #CD5A6A;
+background: var(--salmon);
 border-radius: 50%;
 position: absolute;
 top: -60px;
 right: -60px;
-.div{
+.iconContainer{
     width: 40px;
     height: 40px;
     background-color: transparent;

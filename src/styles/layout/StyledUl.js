@@ -7,6 +7,9 @@ display: flex;
 flex-direction: column;
 align-items: flex-end;
 justify-content: space-evenly;
+${media.greaterThan("large")`
+    height: 70vh;
+  `}
 a{
   color: #e8e8e8;
   text-decoration: none;
