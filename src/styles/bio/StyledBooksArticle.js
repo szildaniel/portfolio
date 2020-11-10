@@ -3,8 +3,8 @@ import media from 'styled-media-query';
 
 const StyledBooksArticle = styled.section`
     opacity: 1;
-    padding-top: 40px;
     padding: 60px 20px;
+    padding-bottom: 30px;
     padding-right: 80px;
     font-size: clamp(100%,1rem + 2vw,18px);
     ${media.greaterThan("medium")`
@@ -24,10 +24,17 @@ const StyledBooksArticle = styled.section`
         color: var(--lightGray);
         &:nth-of-type(2){
             padding-top: 20px;
+            display: none;
+            ${media.greaterThan("medium")`
+                padding-left: clamp(40px,10vw,600px);
+                width: 35%;
+                display: block;
+            `}
         }
         ${media.greaterThan("medium")`
             padding-left: clamp(40px,10vw,600px);
             width: 35%;
+            display: block;
         `}
     }
 `

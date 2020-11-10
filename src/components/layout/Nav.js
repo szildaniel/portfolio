@@ -29,7 +29,7 @@ const Nav = props => {
 
   return (
       <StyledNav >
-        <div onClick={handleClick} >
+        <div onClick={handleClick} role="menu" tabIndex={0}>
           <Hamburger isOpen={isOpen} />
         </div>
         <LinkList isOpen={isOpen} />

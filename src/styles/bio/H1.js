@@ -7,6 +7,7 @@ export const H1 = styled.h1`
     font-weight: bold;
     color: black;
     margin: clamp(40px, 10vw, 140px);
+    margin-top: clamp(70px, 10vw, 140px);
     position: relative;
     z-index: 1;
     &:after{

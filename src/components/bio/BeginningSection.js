@@ -1,8 +1,7 @@
 import React from "react"
 import StyledBeginnningSection from "../../styles/bio/StyledBeginningSection"
-import BooksArticle from "../bio/BooksArticle"
 import { H1 } from "../../styles/bio/H1"
-
+import BooksArticle from "../bio/BooksArticle"
 import DiceArticle from '../bio/DiceArticle';
 
 const BeginningSection = () => {

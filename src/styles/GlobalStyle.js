@@ -33,7 +33,13 @@ const GlobalStyle = createGlobalStyle`
   h2,h3,h4,h5{
     font-family: 'Lato', sans-serif
   }
-
+  a{
+    color: black;
+    text-decoration: none;
+    &:focus{
+      outline-offset: 0;
+    }
+  }
   .homeLogoSection{
     height: 100vh;
   }

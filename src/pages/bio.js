@@ -3,6 +3,7 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo"
 
 import BeginningSection from '../components/bio/BeginningSection';
+import CourseSection from '../components/bio/CourseSection';
 
 const SecondPage = () => (
   <Layout>
@@ -10,7 +11,7 @@ const SecondPage = () => (
 
 
     <BeginningSection />
-
+    <CourseSection />
 
   </Layout>
 )

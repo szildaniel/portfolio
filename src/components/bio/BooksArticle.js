@@ -21,6 +21,7 @@ const BooksArticle = () => (
       // Set ImageData.
       const imageData = data.desktop.childImageSharp.fluid
       return (
+        <>
         <BackgroundImage
           Tag="article"
           fluid={imageData}
@@ -42,6 +43,12 @@ const BooksArticle = () => (
             </p>
           </StyledBooksArticle>
         </BackgroundImage>
+        <p className="onlyMobileParagraph">
+              First I learned markups and HTML Syntax then I go straight to CSS.
+              Colors, gradiends, SVG’s and animations. Fastly i realized that
+              making designs of websites make me happy and relaxed.
+        </p>
+      </>
       )
     }}
   />
