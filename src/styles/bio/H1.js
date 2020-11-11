@@ -5,7 +5,7 @@ import Undercover from '../../images/bio/Undercover.svg';
 export const H1 = styled.h1`
     font-size: clamp(40px,1rem + 2vw,75px);
     font-weight: bold;
-    color: black;
+    color: ${props => props.color || "black"};
     margin: clamp(40px, 10vw, 140px);
     margin-top: clamp(70px, 10vw, 140px);
     position: relative;
@@ -36,4 +36,7 @@ export const H1 = styled.h1`
             left: -50px;
         `}
     }
+    ${media.greaterThan("medium")`
+        margin-top: clamp(70px,10vw,80px);
+    `}
 `

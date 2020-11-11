@@ -2,7 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 import media from 'styled-media-query';
 import blueUndercover from '../images/blueUndercover.svg'
 
-
 const GlobalStyle = createGlobalStyle`
 :root{
 --blue: #63c1f6;

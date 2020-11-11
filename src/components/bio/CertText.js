@@ -2,14 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import StyledParagraph from "../../styles/bio/StyledCertText"
 import Button from "../Button"
-import { H1 } from "../../styles/bio/H1"
+
 
 const CertText = () => {
   return (
     <>
       <StyledParagraph>
-      <H1 bgText={`"course"`}>Course</H1>
-
         <p>
           Meanwhile to organize knowledge I decided to make a 3 weeks stationary
           course at University Of Economics and Computer Science in Kraków. The

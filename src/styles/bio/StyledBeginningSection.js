@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import media from 'styled-media-query';
 
 const StyledBeginnningSection = styled.section`
+    padding-top: clamp(15px,5vw,140px);
     background-color: white;
     .onlyMobileParagraph {
         padding: 60px 20px;

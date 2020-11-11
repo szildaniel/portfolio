@@ -74,7 +74,7 @@ const DiceArticle = styled(DiceArt)`
   overflow: hidden;
   h2 {
     font-size: 22px;
-    font-size: clamp(100%, 1rem + 3vw, 24px);
+    font-size: clamp(22px,1rem + 1vw,24px);
     font-weight: bold;
     padding-top: 230px;
     padding-top: clamp(40px,10vw,140px);

@@ -7,7 +7,7 @@ import DiceArticle from '../bio/DiceArticle';
 const BeginningSection = () => {
   return (
       <StyledBeginnningSection>
-        <H1 bgText={`"Beg"`}>Beginning</H1>
+        <H1 bgText={`"beg"`}>Beginning</H1>
         <DiceArticle />
         <BooksArticle />
       </StyledBeginnningSection>
