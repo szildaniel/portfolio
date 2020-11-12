@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import media from 'styled-media-query';
+
 
 const SkillsLink = (props) => {
     const [isActive, setIsActive] = useState(false);
@@ -28,6 +30,15 @@ const MyP = styled.p`
     text-align: center;
     transform: skewX(30deg);
     cursor: pointer;
+    ${media.lessThan('medium')`
+        width: 100%;
+        height:33%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    `
+    }
+    
 `
 
 export default SkillsLink;

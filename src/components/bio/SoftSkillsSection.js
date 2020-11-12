@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import StyledSkillsSection from "../../styles/bio/StyledSkillsSection.js"
+import media from "styled-media-query"
 import styled from "styled-components"
 import { H1 } from "../../styles/bio/H1"
 import SkillsLink from "./SkillsLink"
 
 import teamwork from "../../images/bio/skills/teamwork.png"
 import communication from "../../images/bio/skills/communication.png"
-import motivation from "../../images/bio/skills/motivation.svg";
+import motivation from "../../images/bio/skills/motivation.svg"
 
 const SoftSkillsSection = () => {
   const [activeImage, setActiveImage] = useState(1)
@@ -40,6 +41,11 @@ const SoftSkillsSection = () => {
           />
         </div>
       </ImgCont>
+      <p className="skillsText">
+        When I was 7 years old my grandpa took me on Ice Hockey Match. I fell in
+        love with this sport and my whole childhood until 16 I spend on skating
+        and hard traning. I am glad because that installed in me:
+      </p>
     </StyledSkillsSection>
   )
 }
@@ -60,10 +66,10 @@ const ImgCont = styled.div`
     position: absolute;
     background: ${props =>
       props.activeImage === 1
-        ? `url('${teamwork}')` :
-        props.activeImage === 2
-        ? `url('${communication}')` 
-        :  `url('${motivation}')`};
+        ? `url('${teamwork}')`
+        : props.activeImage === 2
+        ? `url('${communication}')`
+        : `url('${motivation}')`};
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -92,4 +98,33 @@ const ImgCont = styled.div`
     display: flex;
     justify-content: space-around;
   }
+
+  ${media.lessThan("medium")`
+    width: 100vw;
+    height: 412px;
+    transform: skewY(-15deg);
+    top: 200px;
+    &:before{
+      width: 100%;
+      height: 140%;
+      background-position: 35% center;
+      transform: skewY(15deg) translateY(-110px);
+    }
+    .overlay {
+    width: 100vw;
+    height: 5px;
+    left: 0;
+    top: 33%;
+    &:nth-of-type(2) {
+      left: 0;
+      top: 66%;
+    }
+    }
+    .linksContainer{
+      flex-direction: column;
+      height: 100%;
+      top: 0;
+      padding-left: 20px;
+    }
+    `}
 `
