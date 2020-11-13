@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import BeginningSection from '../components/bio/BeginningSection';
 import CourseSection from '../components/bio/CourseSection';
 import SoftSkillsSection from '../components/bio/SoftSkillsSection';
+import TechStackSection from '../components/bio/TechStackSection';
 
 const SecondPage = () => (
   <Layout>
@@ -13,7 +14,8 @@ const SecondPage = () => (
     <BeginningSection />
     <CourseSection />
     <SoftSkillsSection />
-
+    <TechStackSection />
+    
   </Layout>
 )
 

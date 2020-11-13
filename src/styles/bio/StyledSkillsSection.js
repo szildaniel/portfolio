@@ -20,6 +20,7 @@ const StyledSkillsSection = styled.section`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    span { display: none;}
     ${media.greaterThan("medium")`
       width: 25vw;
     `}
@@ -32,7 +33,8 @@ const StyledSkillsSection = styled.section`
     top: 0;
     position: static;
     transform: none;
-    padding-top: 100vh;
+    padding-top: 110vh;
+    padding-bottom: 20px;
     background: #3f3b3b;
 }
     `}

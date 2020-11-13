@@ -26,6 +26,10 @@
     "styled-media-query": "^2.1.2"
   },
   "devDependencies": {
+    "@iconify/icons-grommet-icons": "^1.0.0",
+    "@iconify/icons-logos": "^1.0.12",
+    "@iconify/icons-vscode-icons": "^1.0.2",
+    "@iconify/react": "^2.0.0-rc.2",
     "prettier": "2.1.2"
   },
   "keywords": [

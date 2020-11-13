@@ -44,7 +44,7 @@ const SoftSkillsSection = () => {
       <p className="skillsText">
         When I was 7 years old my grandpa took me on Ice Hockey Match. I fell in
         love with this sport and my whole childhood until 16 I spend on skating
-        and hard traning. I am glad because that installed in me:
+        and hard traning. I am glad because that installed in me three very importnant attributes.
       </p>
     </StyledSkillsSection>
   )
