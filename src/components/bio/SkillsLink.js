@@ -9,7 +9,6 @@ const SkillsLink = (props) => {
         props.setActiveImage(props.i)
     }
     useEffect( () => {
-        console.log('image active changed')
         if(props.imageActive === props.i){
             setIsActive(true);
         }

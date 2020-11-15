@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import gsap from "gsap"
 import styled from "styled-components"
 import TechItem from "./TechItem"
+import StackInfo from './StackInfo';
 
 import fileTypeCss from "@iconify/icons-vscode-icons/file-type-css"
 import fileTypeHtml from "@iconify/icons-vscode-icons/file-type-html"
@@ -13,33 +14,82 @@ import gatsbyIcon from "@iconify/icons-logos/gatsby"
 import gsapLogo from "../../images/bio/gsapLogo.svg"
 
 const StackGrid = props => {
-  const parentEl = useRef(null)
-  const hideIcon = (el, fn) => {
-    gsap.to(el, { autoAlpha: 0, x: 0, y: 0, duration: 0.3 })
-  }
-  return (
-    <StyledGrid ref={parentEl}>
-      <TechItem hideIcon={hideIcon} icon={fileTypeHtml} />
-      <TechItem hideIcon={hideIcon} icon={fileTypeCss} />
-      <TechItem hideIcon={hideIcon} icon={javascriptIcon} />
-      <TechItem hideIcon={hideIcon} icon={reactIcon} />
-      <div className="stackInfo">
-          <h3>HTML</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-            obcaecati enim placeat id adipisci esse vero qui minus dolorem deserunt,
-            laboriosam expedita totam culpa perspiciatis assumenda molestias aperiam
-            possimus nostrum?Laborum quod aspernatur accusamus voluptas voluptatibus
-            ratione omnis architecto. Itaque provident deleniti est porro recusandae
-            nemo accusamus ipsa totam in. Voluptatum consequuntur veniam quos
-            inventore hic reprehenderit obcaecati corporis ullam.
-          </p>
-      </div>
+  const parentEl = useRef(null);
 
-      <TechItem hideIcon={hideIcon} icon={figmaIcon} />
-      <TechItem hideIcon={hideIcon} icon={jestIcon} />
-      <TechItem hideIcon={hideIcon} gsapLogo={gsapLogo} />
-      <TechItem hideIcon={hideIcon} icon={gatsbyIcon} />
+  const [activeTech, setActiceTech] = useState({
+    html: true,
+    css: false,
+    js: false,
+    react: false,
+    figma: false,
+    jest: false,
+    gsap: false,
+    gatsby: false
+  })
+
+  const [expandedTechInfo, setExpandedTechInfo] = useState('html')
+
+  const handleClick = e => {
+    const { icon } = e.target.closest("div").dataset;
+    if (icon !== expandedTechInfo ) {
+      setExpandedTechInfo(icon);
+
+      setActiceTech(activeTech => ({...activeTech, [expandedTechInfo]: false, [icon]: true}))
+    } 
+  }
+
+  return (
+    <StyledGrid ref={parentEl} onClick={handleClick}>
+      <TechItem
+        icon={fileTypeHtml}
+        dataIcon="html"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        icon={fileTypeCss}
+        dataIcon="css"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        icon={javascriptIcon}
+        dataIcon="js"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        icon={reactIcon}
+        dataIcon="react"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <StackInfo activeTech={activeTech} />
+
+      <TechItem
+        icon={figmaIcon}
+        dataIcon="figma"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        icon={jestIcon}
+        dataIcon="jest"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        gsapLogo={gsapLogo}
+        dataIcon="gsap"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
+      <TechItem
+        icon={gatsbyIcon}
+        dataIcon="gatsby"
+        expandedTechInfo={expandedTechInfo}
+        activeTech={activeTech}
+      />
     </StyledGrid>
   )
 }
@@ -54,19 +104,6 @@ const StyledGrid = styled.div`
   justify-items: center;
   align-self: center;
   padding-top: 40px;
-  .stackInfo {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 5;
-
-    h3{
-        font-family: Lato;
-        font-size: 20px;
-        font-weight: 600;
-        padding: 10px 0;
-    }
-  }
 `
 
 export default StackGrid

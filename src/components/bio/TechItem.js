@@ -4,50 +4,49 @@ import gsap from "gsap"
 import { Icon, InlineIcon } from "@iconify/react"
 
 const TechItem = props => {
-  const [isAnimated, setIsAnimated] = useState(false)
+  const [isActive, setIsActive] = useState()
 
   const parentEl = useRef(null)
 
-  const handleClick = e => {
-    console.log("iam animating")
-    if (isAnimated) {
-      setIsAnimated(!isAnimated)
-      props.hideIcon(parentEl.current.children[1])
-    } else {
-      setIsAnimated(!isAnimated)
-      gsap.to(parentEl.current.children[1], {
-        x: 20,
-        y: -30,
-        autoAlpha: 1,
-        duration: 2,
-      })
-    }
+  const hideIcon = () => {
+    gsap.to(parentEl.current.children[1], { autoAlpha: 0, x: 0, y: 0, duration: 0.3 })
+  }
+  const showIcon = () => {
+    gsap.to(parentEl.current.children[1], {autoAlpha: 1, x: 20, y: -30, duration: 0.9 })
   }
 
   useEffect(() => {
-    gsap.set(parentEl.current.children[1], { autoAlpha: 0 })
+    hideIcon()
   }, [])
 
+  useEffect(() => {
+    setIsActive(props.activeTech[props.dataIcon])
+  }, [props.activeTech])
+
+  useEffect(() => {
+    isActive ?  showIcon() : hideIcon();
+  }, [isActive])
+
   return (
-    <div ref={parentEl} onClick={handleClick} className="techItemsContainer">
-      <StyledRect>
+    <div ref={parentEl} className="techItemsContainer">
+      <StyledRect data-icon={props.dataIcon}>
         {props.icon ? (
           <Icon
             icon={props.icon}
-            width={isAnimated ? "0px" : "35px"}
-            height={isAnimated ? "0px" : "35px"}
+            width="35px"
+            height="35px"
           />
         ) : (
           <img
             src={props.gsapLogo}
             alt="gsap logo"
-            width={isAnimated ? "0px" : "35px"}
-            height={isAnimated ? "0px" : "auto"}
+            width="35px"
+            height="auto"
           />
         )}
       </StyledRect>
-      <StyledRect>
-      {props.icon ? (
+      <StyledRect data-icon={props.dataIcon}>
+        {props.icon ? (
           <Icon
             icon={props.icon}
             width="45px"
@@ -59,6 +58,7 @@ const TechItem = props => {
             alt="gsap logo"
             width="40px"
             height="auto"
+
           />
         )}
       </StyledRect>
@@ -86,8 +86,8 @@ const StyledRect = styled.div`
     filter: grayscale(0);
     z-index: 15;
   }
-  img{
-      padding-right: 5px;
+  img {
+    padding-right: 5px;
   }
 `
 
