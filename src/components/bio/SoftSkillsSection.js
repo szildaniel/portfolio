@@ -4,10 +4,12 @@ import media from "styled-media-query"
 import styled from "styled-components"
 import { H1 } from "../../styles/bio/H1"
 import SkillsLink from "./SkillsLink"
+import TurbulenceSVGFilter from "./TurbulenceSVGFilter";
 
 import teamwork from "../../images/bio/skills/teamwork.png"
 import communication from "../../images/bio/skills/communication.png"
 import motivation from "../../images/bio/skills/motivation.svg"
+import Turbulence from "../../styles/bio/TurbulenceSVGFilter.js"
 
 const SoftSkillsSection = () => {
   const [activeImage, setActiveImage] = useState(1)
@@ -44,8 +46,9 @@ const SoftSkillsSection = () => {
       <p className="skillsText">
         When I was 7 years old my grandpa took me on Ice Hockey Match. I fell in
         love with this sport and my whole childhood until 16 I spend on skating
-        and hard traning. I am glad because that installed in me three very importnant attributes.
+        and hard traning. I am glad because that installed in me 3 very importnant attributes.
       </p>
+      <Turbulence activeImage={activeImage}/>
     </StyledSkillsSection>
   )
 }
@@ -61,7 +64,7 @@ const ImgCont = styled.div`
   &:before {
     content: "";
     display: inline-block;
-    width: 150%;
+    width: 166%;
     height: 100%;
     position: absolute;
     background: ${props =>
@@ -74,9 +77,10 @@ const ImgCont = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     transform: skew(30deg) translateX(-18%);
-    filter: grayscale(15%);
+    filter: grayscale(15%) url(#go);
     opacity: 0.55;
     z-index: 10;
+    top: -20px;
   }
   .overlay {
     width: 10px;
@@ -100,10 +104,11 @@ const ImgCont = styled.div`
   }
 
   ${media.lessThan("medium")`
-    width: 100vw;
+    width: 110vw;
     height: 412px;
     transform: skewY(-15deg);
     top: 200px;
+    
     &:before{
       width: 100%;
       height: 140%;
@@ -112,7 +117,7 @@ const ImgCont = styled.div`
     }
     .overlay {
     width: 100vw;
-    height: 5px;
+    height: 2px;
     left: 0;
     top: 33%;
     &:nth-of-type(2) {
@@ -124,7 +129,7 @@ const ImgCont = styled.div`
       flex-direction: column;
       height: 100%;
       top: 0;
-      padding-left: 20px;
+      /* padding-left: 20px; */
     }
     `}
 `

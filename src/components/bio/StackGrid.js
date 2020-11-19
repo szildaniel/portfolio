@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react"
-import gsap from "gsap"
+import React, { useRef, useState } from "react"
 import styled from "styled-components"
 import TechItem from "./TechItem"
-import StackInfo from './StackInfo';
+import StackInfo from "./StackInfo"
+import media from "styled-media-query"
 
 import fileTypeCss from "@iconify/icons-vscode-icons/file-type-css"
 import fileTypeHtml from "@iconify/icons-vscode-icons/file-type-html"
@@ -13,8 +13,11 @@ import jestIcon from "@iconify/icons-logos/jest"
 import gatsbyIcon from "@iconify/icons-logos/gatsby"
 import gsapLogo from "../../images/bio/gsapLogo.svg"
 
-const StackGrid = props => {
-  const parentEl = useRef(null);
+import { StackButtons } from './StackButtons';
+
+
+const StackGrid = () => {
+  const parentEl = useRef(null)
 
   const [activeTech, setActiceTech] = useState({
     html: true,
@@ -24,18 +27,22 @@ const StackGrid = props => {
     figma: false,
     jest: false,
     gsap: false,
-    gatsby: false
+    gatsby: false,
   })
 
-  const [expandedTechInfo, setExpandedTechInfo] = useState('html')
+  const [expandedTechInfo, setExpandedTechInfo] = useState("html")
 
   const handleClick = e => {
-    const { icon } = e.target.closest("div").dataset;
-    if (icon !== expandedTechInfo ) {
-      setExpandedTechInfo(icon);
+    const { icon } = e.target.closest("div").dataset
+    if (icon && icon !== expandedTechInfo) {
+      setExpandedTechInfo(icon)
 
-      setActiceTech(activeTech => ({...activeTech, [expandedTechInfo]: false, [icon]: true}))
-    } 
+      setActiceTech(activeTech => ({
+        ...activeTech,
+        [expandedTechInfo]: false,
+        [icon]: true,
+      }))
+    } else return
   }
 
   return (
@@ -90,13 +97,14 @@ const StackGrid = props => {
         expandedTechInfo={expandedTechInfo}
         activeTech={activeTech}
       />
+      <StackButtons  />
     </StyledGrid>
   )
 }
 
 const StyledGrid = styled.div`
   width: 80vw;
-  height: 135vh;
+  height: 110vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -104,6 +112,21 @@ const StyledGrid = styled.div`
   justify-items: center;
   align-self: center;
   padding-top: 40px;
+  
+  ${media.greaterThan("medium")`
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 70vw;
+    height: 40vh;
+    padding-top: 0;
+    gap: 0 120px;
+    align-self: flex-start;
+    padding-left: clamp(40px,10vw,200px);
+  `}
+
+  ${media.between("medium", "1100px")`
+    padding-top: clamp(40px,10vw,200px);
+  `}
 `
 
 export default StackGrid
