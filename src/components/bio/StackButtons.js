@@ -35,23 +35,19 @@ const StyledStackButton = styled.div`
       height: 30px;
       `}
     ${media.greaterThan(`medium`)`
+    width: 150px;
+      height: 40px;
     &:first-of-type(){
       margin: 0;
     }
-    &:nth-of-type(2){
-      margin-left: clamp(20px,10vw,100px);
-      }
-
     `}
   }
   ${media.greaterThan(`medium`)`
       align-self: end;
       grid-column-start: 6;
-  grid-column-end: 9;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  justify-content: center;
-width: 100%;  
-
+      grid-column-end: 9;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      justify-content: space-between;
     `}
 `

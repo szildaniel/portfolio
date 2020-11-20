@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import StyledParagraph from "../../styles/bio/StyledCertText"
 import Button from "../Button"
 
-
 const CertText = () => {
   return (
     <>

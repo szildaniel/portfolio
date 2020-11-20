@@ -4,7 +4,6 @@ import media from "styled-media-query"
 import styled from "styled-components"
 import { H1 } from "../../styles/bio/H1"
 import SkillsLink from "./SkillsLink"
-import TurbulenceSVGFilter from "./TurbulenceSVGFilter";
 
 import teamwork from "../../images/bio/skills/teamwork.png"
 import communication from "../../images/bio/skills/communication.png"
@@ -46,9 +45,10 @@ const SoftSkillsSection = () => {
       <p className="skillsText">
         When I was 7 years old my grandpa took me on Ice Hockey Match. I fell in
         love with this sport and my whole childhood until 16 I spend on skating
-        and hard traning. I am glad because that installed in me 3 very importnant attributes.
+        and hard traning. I am glad because that installed in me 3 very
+        importnant attributes.
       </p>
-      <Turbulence activeImage={activeImage}/>
+      <Turbulence activeImage={activeImage} />
     </StyledSkillsSection>
   )
 }
@@ -108,7 +108,7 @@ const ImgCont = styled.div`
     height: 412px;
     transform: skewY(-15deg);
     top: 200px;
-    
+    left: -20px;
     &:before{
       width: 100%;
       height: 140%;
@@ -116,13 +116,14 @@ const ImgCont = styled.div`
       transform: skewY(15deg) translateY(-110px);
     }
     .overlay {
-    width: 100vw;
+    width: 110vw;
     height: 2px;
-    left: 0;
+    left: 20px;
     top: 33%;
     &:nth-of-type(2) {
-      left: 0;
       top: 66%;
+      left: 20px;
+
     }
     }
     .linksContainer{

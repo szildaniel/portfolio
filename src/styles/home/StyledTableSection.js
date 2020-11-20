@@ -3,7 +3,7 @@ import media from 'styled-media-query';
 
 export const HomeTitle = styled.h1`
   font-family: "Khand", sans-serif;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: normal;
   writing-mode: vertical-rl;
   text-orientation: upright;
@@ -26,7 +26,7 @@ export const HeroTitle = styled.h1`
   font-size: 21px;
   font-weight: bold;
   position: absolute;
-  bottom: 155px;
+  bottom: 135px;
   z-index: 20;
   right: 30px;
   color: #eaeaea;
@@ -42,7 +42,7 @@ export const HeroSubtitle = styled.h2`
   font-size: 18px;
   font-weight: normal;
   position: absolute;
-  bottom: 125px;
+  bottom: 105px;
   z-index: 20;
   right: 30px;
   color: #eaeaea;
@@ -56,7 +56,7 @@ export const HeroSubtitle = styled.h2`
 export const StyledScrollImg = styled.img`
   z-index: 20;
   position: absolute;
-  bottom: 55px;
+  bottom: 35px;
   right: 30px;
   ${media.greaterThan("small")`
     display:none;
@@ -121,11 +121,11 @@ export const StyledElipseImg = styled.img`
   width: 330px;
   height: auto;
   position: absolute;
-  bottom: -10px;
+  bottom: -40px;
   right: 0;
   z-index: 12;
   ${media.greaterThan("small")`
-    bottom: 0
+    bottom: -45px;
   `}
   ${media.greaterThan("large")`
     width:450px;

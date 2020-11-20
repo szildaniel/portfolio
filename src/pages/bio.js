@@ -7,7 +7,7 @@ import CourseSection from '../components/bio/CourseSection';
 import SoftSkillsSection from '../components/bio/SoftSkillsSection';
 import TechStackSection from '../components/bio/TechStackSection';
 
-const SecondPage = () => (
+const Bio = () => (
   <Layout>
     <SEO title="Bio Page | Daniel Mydlarz"  description="Short biography, soft skills, how I started to learn programming."/>
 
@@ -19,4 +19,4 @@ const SecondPage = () => (
   </Layout>
 )
 
-export default SecondPage;
+export default Bio;

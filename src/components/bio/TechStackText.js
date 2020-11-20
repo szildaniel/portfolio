@@ -1,7 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 import StyledTechText from "../../styles/bio/StyledTechText"
 import linkArrow from "../../images/bio/course/linkArrow.svg"
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
 
 const TechStackText = () => {
   return (
@@ -13,10 +13,10 @@ const TechStackText = () => {
           library, Jest testing framework and more advanced frameworks.
         </p>
 
-        <Link to="/">
+        <AnchorLink to="/bio#technology-stack">
 
           <img src={linkArrow} alt="arrow"/>technology stack
-        </Link>
+        </AnchorLink>
       </StyledTechText>
     </>
   )

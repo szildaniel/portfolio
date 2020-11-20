@@ -2,14 +2,14 @@ import React from "react"
 import StackGrid from "./StackGrid"
 import { H1 } from "../../styles/bio/H1"
 import {StyledStackSection} from '../../styles/bio/StyledStackSection';
-import { StackButtons } from './StackButtons';
+import Footer from './Footer';
 
 const TechStackSection = () => {
   return (
-    <StyledStackSection>
+    <StyledStackSection id="technology-stack">
       <H1 bgText={`"tech"`}>technology stack</H1>
       <StackGrid />
-      {/* <StackButtons /> */}
+      <Footer />
     </StyledStackSection>
   )
 }

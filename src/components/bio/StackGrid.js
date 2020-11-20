@@ -104,14 +104,14 @@ const StackGrid = () => {
 
 const StyledGrid = styled.div`
   width: 80vw;
-  height: 110vh;
+  height: 120vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   align-self: center;
-  padding-top: 40px;
+  padding: 50px 0;
   
   ${media.greaterThan("medium")`
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
