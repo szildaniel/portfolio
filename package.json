@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "axios": "^0.21.0",
     "babel-plugin-styled-components": "^1.11.1",
     "formik": "^2.2.5",
     "gatsby": "^2.25.1",
@@ -31,6 +32,7 @@
     "@iconify-icons/jam": "^1.0.0",
     "@iconify-icons/logos": "^1.0.0",
     "@iconify-icons/openmoji": "^1.0.9",
+    "@iconify/icons-emojione": "^1.0.8",
     "@iconify/icons-grommet-icons": "^1.0.0",
     "@iconify/icons-logos": "^1.0.12",
     "@iconify/icons-vscode-icons": "^1.0.2",

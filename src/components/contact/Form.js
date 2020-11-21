@@ -1,11 +1,42 @@
-import React from 'react';
- import { Formik, Form, Field, ErrorMessage } from 'formik';
+import React, {useState} from "react"
+import axios from 'axios';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
  
- const MyForm = () => (
+ const MyForm = () => { 
+   
+  const [serverState, setServerState] = useState({
+    submitting: false,
+    status: null
+  });
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg }
+    });
+    if (ok) {
+      form.reset();
+    }
+  };
+  const sendData = e => {
+    e.preventDefault();
+    const form = e.target;
+    setServerState({ submitting: true });
+    axios({
+      method: "post",
+      url: "https://getform.io/f/10fb6018-dad7-46df-a18c-5947122dee59",
+      data: new FormData(form)
+    })
+      .then(r => {
+        handleServerResponse(true, "Thanks! Your message is correctly sended.", form);
+      })
+      .catch(r => {
+        handleServerResponse(false, r.response.data.error, form);
+      });
+  };
+  return ( 
    <div>
-     <h1>Any place in your app!</h1>
      <Formik
-       initialValues={{ email: '', password: '' }}
+       initialValues={{ email: 'Email Adress', name: 'Name',message: 'Message' }}
        validate={values => {
          const errors = {};
          if (!values.email) {
@@ -17,26 +48,30 @@ import React from 'react';
          }
          return errors;
        }}
-       onSubmit={(values, { setSubmitting }) => {
+       onSubmit={(values, { setSubmitting }, e) => {
          setTimeout(() => {
-           alert(JSON.stringify(values, null, 2));
            setSubmitting(false);
          }, 400);
        }}
      >
        {({ isSubmitting }) => (
-         <Form>
-           <Field type="email" name="email" />
-           <ErrorMessage name="email" component="div" />
-           <Field type="password" name="password" />
-           <ErrorMessage name="password" component="div" />
-           <button type="submit" disabled={isSubmitting}>
-             Submit
+         <Form onSubmit={sendData} >
+           <Field type="text" required name="name"  />
+           <Field type="email" required name="email"  />
+           <ErrorMessage name="email" component="div" className="errorDiv"/>
+           <Field as="textarea" rows="5" cols="33" wrap="hard" required type="textarea" name="message" />
+           <button type="submit" disabled={serverState.submitting}>
+             Send message
            </button>
+           {serverState.status && (
+            <p className={!serverState.status.ok ? "errorMsg" : ""}>
+              {serverState.status.msg}
+            </p>
+          )}
          </Form>
        )}
      </Formik>
    </div>
- );
+ )};
  
  export default MyForm;

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { StyledFooter } from "../../styles/bio/StyledFooter"
 
 import { Icon } from "@iconify/react"
@@ -12,12 +11,12 @@ const Footer = () => {
     <StyledFooter>
       <div className="footerTopDiv"></div>
       <div className="footerBottomDiv"></div>
-      <Link target="_blank" to="https://pl.linkedin.com/in/daniel-mydlarz-35349a18b">
+      <a target="_blank" href="https://pl.linkedin.com/in/daniel-mydlarz-35349a18b">
         <Icon icon={linkedinIcon} />
-      </Link>
-      <Link target="_blank" to="https://github.com/szildaniel">
+      </a>
+      <a target="_blank" href="https://github.com/szildaniel">
         <Icon icon={githubOctocat} className="footerGhIcon"/>
-      </Link>
+      </a>
       <p>
         Created with love &copy; 2020 Daniel Mydlarz
       </p>
