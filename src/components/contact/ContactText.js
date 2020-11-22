@@ -1,12 +1,17 @@
-import React from "react"
+import React, {useEffect, useRef} from "react"
 import StyledContactText from "../../styles/contact/StyledContactText"
 import { Icon } from "@iconify/react"
 import eMail from "@iconify/icons-emojione/e-mail"
+import {textAnimation} from '../../animations/contactSectionAnimation';
 
 const ContactText = () => {
-
+  const parentEl = useRef(null);
+  useEffect( () => {
+    console.log(parentEl.current.children)
+    textAnimation(parentEl)
+  }, [])
   return (
-    <StyledContactText>
+    <StyledContactText ref={parentEl}>
       <h2 className="subheading">It would be a honor to</h2>
       <p>create good quality code with more experienced developers.</p>
       <p>

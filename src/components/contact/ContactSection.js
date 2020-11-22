@@ -20,7 +20,7 @@ export const ContactSection = ({ className }) => {
       }
     `
   )
-  const imageData = data.desktop.childImageSharp.fluid
+const imageData = data.desktop.childImageSharp.fluid;
 
   return (
     <BackgroundImage

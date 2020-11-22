@@ -8,6 +8,17 @@ const StyledContactSection = styled(ContactSection)`
   background-size: cover;
   background-position: center center;
   background-color: transparent;
+  &::before,
+  &::after {
+    filter: brightness(0.35);
+  }
+  ${media.greaterThan("medium")`
+  &::before,
+  &::after {
+    filter: brightness(0.35);
+  }
+
+  `}
 
   h1 {
     margin: clamp(40px, 10vw, 140px);
@@ -40,6 +51,7 @@ const StyledContactSection = styled(ContactSection)`
       color: var(--lightGray);
       padding: 0 15px;
       border: none;
+      border-radius: 5px;
     }
     p {
       color: white;
@@ -83,6 +95,7 @@ const StyledContactSection = styled(ContactSection)`
     margin-top: 15px;
     padding: 15px;
     box-sizing: border-box;
+    resize: none;
     :focus {
       outline: none;
       background: rgba(255, 255, 255, 0.35);

@@ -3,7 +3,6 @@ import media from "styled-media-query"
 
 const StyledSkillsSection = styled.section`
   width: 100vw;
-  height: 100vh;
   background: var(--dark);
   position: relative;
   h1 {
@@ -36,8 +35,10 @@ const StyledSkillsSection = styled.section`
     padding-top: 110vh;
     padding-bottom: 20px;
     background: #3f3b3b;
-}
     `}
+  }
+  ${media.greaterThan("medium")`
+  height: 100vh`
   }
 `
 

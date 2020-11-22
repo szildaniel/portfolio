@@ -10,10 +10,10 @@ export const StackButtons = () => {
   return (
     <StyledStackButton ref={parentEl}>
       <Button primary>
-        <Link to="/">Porfolio</Link>
+        <Link to="/portfolio">Porfolio</Link>
       </Button>
       <Button primary>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
       </Button>
     </StyledStackButton>
   )

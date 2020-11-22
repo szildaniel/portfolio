@@ -24,6 +24,6 @@ export const info = {
   gatsby: {
     header: "GatsbyJS",
     text:
-      "Using GraphQL and powerfull plugins like `gatsby image`, `react helmet` and a lot more.",
+      "Develop landing pages, using GraphQL and powerfull plugins like `gatsby image`, `react helmet` and a lot more.",
   },
 }

@@ -2,9 +2,9 @@ import styled from "styled-components"
 import media from "styled-media-query"
 
 const StyledContacText = styled.div`
-  background: rgb(185 184 184 / 0.4);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  border: 2px solid gray;
+  border: 2px solid rgb(128 128 128 / 0.2);
   /* width: 300px; */
   width: 100%;
   box-sizing: border-box;
@@ -36,6 +36,11 @@ const StyledContacText = styled.div`
 
   ${media.greaterThan("medium")`
   width: 30vw;
+  height: 45vh;
+  border: 4px solid rgb(128 128 128 / 0.2);
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   `}
 `
 

@@ -12,7 +12,7 @@ const Turbulence = (props) => {
     tl.to(turbulence.current, {attr: {baseFrequency: '0 0'}, duration: 1.2} )
   },[props.activeImage])
   return (
-    <svg>
+    <svg className="svgTurbulence">
       <filter id="go">
           <feTurbulence baseFrequency="0.02 0.07" result="GO" numOctaves="1" ref={turbulence}></feTurbulence>
           <feDisplacementMap in="SourceGraphic" in2="GO" scale="40"></feDisplacementMap>

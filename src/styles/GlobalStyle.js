@@ -74,6 +74,9 @@ const GlobalStyle = createGlobalStyle`
       z-index: 19;
     }
   }
+  .svgTurbulence{
+    height: 0;
+  }
 `
 
 
