@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 --lightGray: #EFEFEF;
 
 --bgBlue: rgb(99 193 246 / 0.1);
-
+--linearYellow: linear-gradient(45deg, rgba(255,221,112,1) 0%, rgba(234,185,31,1) 100%);
 }
 *{
   margin: 0;
