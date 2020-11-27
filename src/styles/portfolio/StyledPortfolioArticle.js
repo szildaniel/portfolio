@@ -3,17 +3,14 @@ import media from "styled-media-query"
 
 const StyledPortfolioArticle = styled.article`
   width: 100vw;
-  min-height: 100vh;
   background: ${props => `url(${props.bgPhoto})` || "transparent"};
   background-repeat: no-repeat;
   background-position: 50% 0%;
-  /* background-size: cover; */
-  background-size: contain;
-
+  background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  padding-bottom: 60px;
   img {
     width: 95vw;
     height: auto;
