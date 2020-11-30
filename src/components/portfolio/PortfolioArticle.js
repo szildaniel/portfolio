@@ -5,7 +5,7 @@ import arrowRight from "@iconify/icons-bi/arrow-right"
 
 const PortfolioArticle = props => {
   return (
-    <StyledPortfolioArticle bgPhoto={props.bgPhoto || null}>
+    <StyledPortfolioArticle bgPhoto={props.bgPhoto || null} paddingBot={props.paddingBot}>
       {props.children}
       <a href={props.ghLink} target="_blank">
         <Icon icon={arrowRight} className="arrowIcon" />

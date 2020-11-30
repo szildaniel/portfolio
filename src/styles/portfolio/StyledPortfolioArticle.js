@@ -3,14 +3,10 @@ import media from "styled-media-query"
 
 const StyledPortfolioArticle = styled.article`
   width: 100vw;
-  background: ${props => `url(${props.bgPhoto})` || "transparent"};
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
-  background-size: cover;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 60px;
+  padding-bottom: ${props => props.paddingBot || "60px"};
   img {
     width: 95vw;
     height: auto;
@@ -36,6 +32,51 @@ const StyledPortfolioArticle = styled.article`
     color: black;
     margin-right: 7px;
   }
+  .mockupsContainers {
+    position: absolute;
+    background: transparent;
+    width: 40%;
+    height: 45%;
+    margin-left: 30px;
+    z-index: 30;
+    left: 5%;
+    top: 3%;
+  }
+
+  ${media.greaterThan("medium")`
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 200px;
+
+    p{
+      width: 30%;
+      margin-left: clamp(40px,24.5vw,600px);
+      margin-top: 60px;
+      font-size: 20px;
+    }
+    a{
+      position: absolute;
+      right: clamp(40px,24.5vw,600px);
+      top: 850px;
+      margin-right: 25px;
+      font-size: 18px;
+    }
+    .arrowIcon {
+      width: 35px;
+      height: 35px;
+    }
+    .mockupsContainers{
+      width: 60%;
+      height: 65%;
+      left: 27%;
+      top: 6%;
+    }
+  `}
 `
 
 export default StyledPortfolioArticle

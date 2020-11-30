@@ -11,11 +11,14 @@ const PortfolioItem = props => {
       bgColor={props.bgColor}
       overflowHidden={props.overflowHidden}
       marginTop={props.marginTop}
+      iconsAbsolute={props.iconsAbsolute}
     >
       <h2>{props.itemTitle}</h2>
       <div className="iconsContainer">
-        <Icon icon={laptopOutlined} />
-        <Icon icon={githubSquare} />
+        <a target="_blank" href={props.liveLink}><Icon icon={laptopOutlined} /></a>
+        <a target="_blank" href={props.ghLink}>
+          <Icon icon={githubSquare} />
+        </a>
       </div>
       {props.children}
     </StyledPortfolioItem>

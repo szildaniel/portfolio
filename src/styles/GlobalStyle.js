@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
 --bgBlue: rgb(99 193 246 / 0.1);
 --linearYellow: linear-gradient(45deg, rgba(255,221,112,1) 0%, rgba(234,185,31,1) 100%);
+--radialYellow: radial-gradient(circle, rgba(254,208,0,1) 0%, rgba(240,181,1,1) 100%);
 }
 *{
   margin: 0;
