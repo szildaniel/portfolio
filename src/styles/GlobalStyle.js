@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: Roboto, sans-serif;
-    background: ${props => (props.whiteBg ? 'white' : 'pink')};
+    background: white;
     overflow-x: hidden;
     font-size: 16px;
   }
@@ -46,18 +46,16 @@ const GlobalStyle = createGlobalStyle`
   main{
     background: white;
     overflow-x: hidden;
+    transform-origin: top left;
   }
   
   .homeContainer{
+    overflow: hidden;
     ${media.greaterThan("small")`
     display: flex;
   `}
   }
-
-  .layoutContainer{
-    transform-origin: top left;
-  }
-
+  
   .booksSection{
     opacity: 0.67 !important;
   }

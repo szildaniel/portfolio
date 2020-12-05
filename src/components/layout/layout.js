@@ -5,12 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, {useRef} from "react"
+import React, { useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import {Helmet} from 'react-helmet';
-import Nav from "./Nav";
-import GlobalStyle from "../../styles/GlobalStyle";
+import { Helmet } from "react-helmet"
+import GlobalStyle from "../../styles/GlobalStyle"
+import Nav from './Nav';
+import {setNavFixedPosition} from '../../animations/menuAnimation';
+import Hamburger from './Hamburger';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,16 +24,27 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClick = () => {
+    setIsOpen(isOpen => !isOpen)
+  }
   const layoutRef = useRef(null);
- 
+  const mainRef = useRef(null);
+
+  useEffect( () => {
+    setNavFixedPosition(layoutRef.current.children[1])
+  },[])
+  
   return (
-    <div ref={layoutRef} className="layoutContainer"> 
+    <div ref={layoutRef} className="layoutContainer">
       <Helmet>
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <Nav layoutRef={layoutRef} />
-        <main>{children}</main>
-        <GlobalStyle whiteBg />
+      <Hamburger handleClick={handleClick} isOpen={isOpen}/>
+      <Nav mainRef={mainRef} layoutRef={layoutRef} isOpen={isOpen}/>
+      <main ref={mainRef}>{children}</main>
+      <GlobalStyle />
     </div>
   )
 }

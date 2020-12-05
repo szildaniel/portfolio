@@ -13,7 +13,7 @@ const CertText = () => {
           Fundamentals Certificate.
         </p>
         <Button primary>
-          <a target="_blank" noreferrer href="https://www.certiport.com/Portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=171&cvid=+qAyXJQp02QkR0Rgk0+LwQ==">Certificate</a>
+          <a target="_blank" noreferrer="true" href="https://www.certiport.com/Portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=171&cvid=+qAyXJQp02QkR0Rgk0+LwQ==">Certificate</a>
         </Button>
       </StyledParagraph>
     </>

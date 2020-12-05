@@ -72,7 +72,7 @@ const StyledFooter = styled.footer`
   ${media.greaterThan("huge")`
     .footerTopDiv{
         background-repeat: no-repeat;
-        background-position-x: right;
+        background-position-x: left;
     }
   `}
 `

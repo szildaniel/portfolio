@@ -14,7 +14,7 @@ const SoftSkillsSection = () => {
   const [activeImage, setActiveImage] = useState(1)
 
   return (
-    <StyledSkillsSection>
+    <StyledSkillsSection id="soft-skills">
       <H1 bgText={`"soft"`} color="white">
         Soft skills
       </H1>

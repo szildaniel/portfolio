@@ -1,25 +1,23 @@
-import React, {useRef, useEffect} from 'react';
-import gsap from 'gsap';
+import React, { useEffect, useRef} from 'react';
+import StyledHamburger from '../../styles/layout/StyledHamburger';
 import hamburgerIcon from '../../images/layout/hamburgerIcon.svg'
 import closeIcon from '../../images/layout/closeIcon.svg'
-import StyledCircleHamburger from '../../styles/layout/StyledCircleHamburger';
+import {setHamburgerPosition} from '../../animations/menuAnimation';
 
-const Hamburger = (props) => {
-    const iconRef = useRef(null);
+const Hamburger = props => {
+    const hamburgerRef = useRef(null);
+
     useEffect( () => {
-        if(props.isOpen) {
-            gsap.to(iconRef.current, {rotate: 30, x:-15, y: 10, duration: 0.3})
-        }
-        else { 
-            gsap.to(iconRef.current, {rotate: 0, x:0, y: 0, duration: 0.3})
-        }
-    }, [props.isOpen])
+        setHamburgerPosition(hamburgerRef);
+    }, [])
+
     return (
-        <StyledCircleHamburger>
-            <div className="iconContainer" ref={iconRef}>
+        <StyledHamburger ref={hamburgerRef} onClick={props.handleClick}>
+            <div className="iconsContainer">
                 <img src={props.isOpen ? closeIcon : hamburgerIcon} alt="menu" />
             </div>
-        </StyledCircleHamburger>
+
+        </StyledHamburger>
     )
 }
 

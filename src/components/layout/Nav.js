@@ -1,39 +1,37 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef } from "react"
+import StyledNav from "../../styles/layout/StyledNav"
+import LinkList from './LinkList';
 
-import gsap from "gsap"
-
-import LinkList from "./LinkList"
-import Hamburger from "./Hamburger"
-import StyledNav from '../../styles/layout/StyledNav';
+import Img from "gatsby-image"
+import { useMenuPhotoQuery } from "../../helpers/hooks/useMenuPhotoQuery"
+import { pageRotation, animateMenu, setMenuSVGPosition } from "../../animations/menuAnimation"
 
 const Nav = props => {
-  const [isOpen, setIsOpen] = useState(false)
+  const data = useMenuPhotoQuery()
+  const svgContainerRef = useRef(null);
 
-  const animateMenu = () => {
-    const openMenu = () => {
-      gsap.to(props.layoutRef.current, {rotate: -30});
-      gsap.to(props.layoutRef.current.parentNode, {overflow: "hidden"})
-    }
-    const closeMenu = () => {
-      gsap.to(props.layoutRef.current, {rotate: 0});
-      gsap.to(props.layoutRef.current.parentNode, {overflow: "visible"})
+  useEffect( () => {
+    setMenuSVGPosition(svgContainerRef);
+  }, [])
 
-    }
-    isOpen ? closeMenu() : openMenu()
-    console.log()
-  }
-  const handleClick = () => {
-    setIsOpen(!isOpen)
-    animateMenu()
-  }
+
+  useEffect(() => {
+    pageRotation(props.mainRef.current, props.isOpen)
+    animateMenu(props.layoutRef.current.children[1], props.isOpen)
+  }, [props.isOpen])
+
 
   return (
-      <StyledNav >
-        <div onClick={handleClick} role="menu" tabIndex={0}>
-          <Hamburger isOpen={isOpen} />
+      
+      <StyledNav>
+        <div className="menuItems">
+          <LinkList isOpen={props.isOpen}/>
         </div>
-        <LinkList isOpen={isOpen} />
+        <div className="svgContainer" ref={svgContainerRef}>
+          <Img fluid={data.file.childImageSharp.fluid} alt="blue wave" />
+        </div>
       </StyledNav>
+    
   )
 }
 

@@ -7,7 +7,7 @@ import StyledCourse from '../../styles/bio/StyledCourseSection';
 const CourseSection = () => {
 
      return (
-        <StyledCourse>
+        <StyledCourse id="course">
             <H1 bgText={`"course"`}>Course</H1>
             <div className="textContainer">
                 <CertText />
