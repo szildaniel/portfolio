@@ -10,12 +10,12 @@ const StyledContactSection = styled(ContactSection)`
   background-color: transparent;
   &::before,
   &::after {
-    filter: brightness(0.35);
+    filter: brightness(0.25);
   }
   ${media.greaterThan("medium")`
   &::before,
   &::after {
-    filter: brightness(0.35);
+    filter: brightness(0.25);
   }
 
   `}
@@ -28,12 +28,19 @@ const StyledContactSection = styled(ContactSection)`
     &:after {
       padding-top: clamp(70px, 10vw, 140px);
     }
+    margin-left: 0;
+    margin-bottom: clamp(20px, 5vw, 65px);
+    &:before {
+      color: rgb(255 255 255 / 0.06);
+      font-size: clamp(87px, 10vw, 156px);
+    }
   }
   .contactContainer {
     display: flex;
     flex-direction: column;
     margin: clamp(40px, 10vw, 140px);
     margin-top: clamp(70px, 10vw, 140px);
+    margin-top: 0;
     margin-bottom: 0;
   }
   form {
@@ -48,10 +55,11 @@ const StyledContactSection = styled(ContactSection)`
       height: 40px;
       margin-top: 15px;
       background: rgba(255, 255, 255, 0.1);
-      color: var(--lightGray);
+      color: #c1c1c1;
       padding: 0 15px;
       border: none;
       border-radius: 5px;
+      cursor: pointer;
     }
     p {
       color: white;
@@ -65,7 +73,7 @@ const StyledContactSection = styled(ContactSection)`
     width: 100%;
     height: 40px;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #a4a4a4;
     border: none;
     border-radius: 5px;
     margin-top: 15px;
@@ -89,7 +97,7 @@ const StyledContactSection = styled(ContactSection)`
     height: 220px;
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
-    color: white;
+    color: #a4a4a4;
     border: none;
     border-radius: 5px;
     margin-top: 15px;
@@ -103,12 +111,11 @@ const StyledContactSection = styled(ContactSection)`
   }
   .errorDiv {
     height: 30px;
-    background: rgba(255, 255, 255, 0.1);
     width: 100%;
     color: red;
     border: none;
     border-radius: 5px;
-    padding-left: 15px;
+    padding: 15px;
     font-size: 14px;
     box-sizing: border-box;
   }
@@ -117,9 +124,21 @@ const StyledContactSection = styled(ContactSection)`
   }
 
   ${media.greaterThan("medium")`
+  h1:after{
+    transform: scale(1.4);
+    top: -14px;
+    left: 15px;
+  }
+  h1:before{
+    bottom: -40px;
+    left: -50px;
+    color: rgb(255 255 255 / 0.06);
+    font-size: clamp(87px,10vw,156px);
+  }
   .contactContainer {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding-top: 90px;
   }
   form{
     width: 30vw;

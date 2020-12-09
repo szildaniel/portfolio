@@ -14,16 +14,13 @@ const Nav = props => {
     setMenuSVGPosition(svgContainerRef);
   }, [])
 
-
   useEffect(() => {
     pageRotation(props.mainRef.current, props.isOpen)
     animateMenu(props.layoutRef.current.children[1], props.isOpen)
   }, [props.isOpen])
 
-
   return (
-      
-      <StyledNav>
+      <StyledNav >
         <div className="menuItems">
           <LinkList isOpen={props.isOpen}/>
         </div>
@@ -34,5 +31,6 @@ const Nav = props => {
     
   )
 }
+
 
 export default Nav

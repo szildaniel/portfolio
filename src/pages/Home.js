@@ -10,7 +10,7 @@ const Home = () => {
       
         <TableSection />
         <LogoSection />
-        <SEO title="Home" />
+        <SEO title="Daniel Mydlarz Frontend Developer | Personal portfolio website." description="Click and see projects that I created, information about me, tehcnology stack and a lot more." />
         
     </div>
   )

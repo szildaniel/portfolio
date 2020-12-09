@@ -6,8 +6,8 @@ import styled from 'styled-components';
 
 const FlipGameItem = ({children}) => {
     const images = useFlipGameQueryFiles();
-    const [ghLink, setGhLink] = useState("https://github.com/szildaniel/flip-game");
-    const [liveLink, setLiveLink] = useState("https://flip-game.now.sh/");
+    const [ghLink] = useState("https://github.com/szildaniel/flip-game")
+    const [liveLink] = useState("https://flip-game.now.sh/")
   return (
     <PortfolioItem
       bgColor="#9B9A9A"
@@ -15,8 +15,8 @@ const FlipGameItem = ({children}) => {
       marginTop="30px"
       overflowHidden
       iconsAbsolute
-      liveLink={liveLink} 
       ghLink={ghLink}
+      liveLink={liveLink}
     >
       <StyledBgImage fluid={images.flipGameBgProject.childImageSharp.fluid}>
         {children}

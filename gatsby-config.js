@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Hire creative junior front end developer.`,
+    title: `Daniel Mydlarz Frontend Developer | Personal portfolio website.`,
+    description: `Click and see projects that I created, information about me, tehcnology stack and a lot more.`,
     author: `Daniel Mydlarz`,
   },
   plugins: [

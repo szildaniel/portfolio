@@ -48,7 +48,7 @@ const LinkList = props => {
             className="arrowDown"
             onClick={handleSubMenuClick}
           />
-          <Link to="/bio/" activeStyle={{ color: "#e8e8e8" }} isPartiallyCurrent={true}>
+          <Link to="/bio/" activeStyle={{ color: "#e8e8e8" }} partiallyActive={true}>
             bio
             <Icon icon={bxsUser} />
           </Link>

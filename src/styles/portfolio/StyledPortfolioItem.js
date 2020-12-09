@@ -30,6 +30,7 @@ const StyledPortfolioItem = styled.div`
     padding-bottom: 15px;
     position: ${props => (props.iconsAbsolute ? "absolute" : "static")};
     bottom: ${props => (props.iconsAbsolute ? "0" : "auto")};
+    z-index: 100;
     a {
       color: #1c132d;
       margin: 0;

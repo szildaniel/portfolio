@@ -37,12 +37,12 @@ const Layout = ({ children }) => {
   },[])
   
   return (
-    <div ref={layoutRef} className="layoutContainer">
+    <div ref={layoutRef} className="layoutContainer" >
       <Helmet>
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
       </Helmet>
-      <Hamburger handleClick={handleClick} isOpen={isOpen}/>
-      <Nav mainRef={mainRef} layoutRef={layoutRef} isOpen={isOpen}/>
+        <Hamburger handleClick={handleClick} isOpen={isOpen}/>
+        <Nav mainRef={mainRef} layoutRef={layoutRef} isOpen={isOpen} setIsOpen={setIsOpen}/>
       <main ref={mainRef}>{children}</main>
       <GlobalStyle />
     </div>

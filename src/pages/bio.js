@@ -9,7 +9,7 @@ import TechStackSection from '../components/bio/TechStackSection';
 
 const Bio = () => (
   <Layout>
-    <SEO title="Bio Page | Daniel Mydlarz"  description="Short biography, soft skills, how I started to learn programming."/>
+    <SEO title="Daniel Mydlarz Porfolio Page biographical information about me."  description="Cool story about how I start programming. See my soft skills and technology stack that I am using in my everyday projects."/>
 
     <BeginningSection />
     <CourseSection />

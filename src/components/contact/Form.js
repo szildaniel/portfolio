@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
- 
+ import {H1} from '../../styles/bio/H1';
  const MyForm = () => { 
    
   const [serverState, setServerState] = useState({
@@ -35,6 +35,9 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
   };
   return ( 
    <div>
+     <H1 color="white" bgText={`"Contact"`}>
+        Contact Form
+      </H1>
      <Formik
        initialValues={{ email: 'Email Adress', name: 'Name',message: 'Message' }}
        validate={values => {

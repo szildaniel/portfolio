@@ -8,8 +8,8 @@ import Img from "gatsby-image"
 import styled from 'styled-components';
 
 const PortfolioProject = () => {
-  const [ghLink, setGhLink] = useState("https://github.com/szildaniel/portfolio2020");
-  const [liveLink, setLiveLink] = useState("https://github.com/szildaniel/portfolio2020");
+  const [ghLink] = useState("https://github.com/szildaniel/portfolio2020");
+  const [liveLink] = useState("https://github.com/szildaniel/portfolio2020");
 
   const images = usePortfolioQueryFiles();
 
