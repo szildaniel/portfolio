@@ -1,4 +1,4 @@
-# Daniel Mydlarz Porfolio Website
+# Daniel Mydlarz Portfolio Website
  **[Live Version](https://portfolio-6hth04q4z.vercel.app/)**
 
 My personal porfolio website - see my latest projects and information about me.
