@@ -1,7 +1,7 @@
 # Daniel Mydlarz Porfolio Website
  **[Live Version](https://portfolio-6hth04q4z.vercel.app/)**
 
-My personal portfolio where you will find short information about me, my projects, contact section and more.
+My personal porfolio website - see my latest projects and information about me.
 
 ## Pages:
 
@@ -11,7 +11,7 @@ My personal portfolio where you will find short information about me, my project
 - Contact
 
 ## Built With
-* [GatsbyJS](https://www.gatsbyjs.com/)
+* [GatsbyJS](https://www.gatsbyjs.com/) - Blazing fast website and apps with graphql.
 * [Styled-components](https://styled-components.com/) - Styling inside JS files.
 * [GreenSock](https://greensock.com/gsap/) - Animations for modern web development
 
