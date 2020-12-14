@@ -15,13 +15,6 @@ My personal porfolio website - see my latest projects and information about me.
 * [Styled-components](https://styled-components.com/) - Styling inside JS files.
 * [GreenSock](https://greensock.com/gsap/) - Animations for modern web development
 
-## Test
-
-There is only one test you can run it using command
-
-```
-npm run test
-```
 
 ## Getting Started
 
@@ -57,6 +50,16 @@ gatsby develop
 
 
 Your local server should be running on http://localhost:8000/
+
+
+## Test
+
+I wrote few unit tests for this website. I used Jest and React Testing Library. To start testing enviroment please run:
+
+```
+npm run test
+```
+
 
 ## Author
 
