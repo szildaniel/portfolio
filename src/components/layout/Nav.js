@@ -7,7 +7,7 @@ import { useMenuPhotoQuery } from "../../helpers/hooks/useMenuPhotoQuery"
 import { pageRotation, animateMenu, setMenuSVGPosition } from "../../animations/menuAnimation"
 
 const Nav = props => {
-  const data = useMenuPhotoQuery()
+  const data = useMenuPhotoQuery();
   const svgContainerRef = useRef(null);
 
   useEffect( () => {

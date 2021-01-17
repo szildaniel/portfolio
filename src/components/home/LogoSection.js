@@ -1,9 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import MyLogo from "../home/MyLogo"
 import StyledArtDirectedBackground from "./ArtImageBackground";
 import StyledLogoSection from '../../styles/home/StyledLogoSection';
+import AnimatedLink from './AnimatedLink';
 
 const LogoSection = () => {
   return (
@@ -14,10 +13,10 @@ const LogoSection = () => {
       </div>
 
       <div className="linkContainer">
-        <Link to="/bio/">bio</Link>
+        <AnimatedLink toPage="/bio/" name="bio"/>
         <div className="rightSide">
-          <Link to="/portfolio/">portfolio</Link>
-          <Link to="/contact/">contact</Link>
+          <AnimatedLink toPage="/portfolio/" name="portfolio"/>
+          <AnimatedLink toPage="/contact" name="contact"/>
         </div>
       </div>
     </StyledLogoSection>

@@ -37,26 +37,15 @@ const StyledLogoSection = styled.section`
     z-index: 120;
     .rightSide{
       padding-right: 30px;
+      display: flex;
     }
-    a {
-    font-family: Roboto 'sans-serif';
-    font-size: 20px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-    &:first-of-type {
-      padding-left: 30px;
-    }
-    &:nth-of-type(2){
-      padding-left: 20px;
-      }
-    }
+ 
     ${media.greaterThan("small")`
     width: 50vw;
     .rightSide{
       padding-right: 50px;
     }
-    a:first-of-type{
+    a.bio{
       padding-left: 50px;
     }
   `}
