@@ -3,14 +3,17 @@ import gsap from 'gsap';
 
 const Turbulence = (props) => {
   const turbulence = useRef(null);
+
   useEffect( () => {
     gsap.set(turbulence.current, {attr: {baseFrequency: '0.15 0.22'}})
   }, [props.activeImage])
   useEffect( () => {
-    console.log(turbulence.current)
     const tl = gsap.timeline();
-    tl.to(turbulence.current, {attr: {baseFrequency: '0 0'}, duration: 1.2} )
-  },[props.activeImage])
+    if(props.turnOnTurbulence){
+      tl.to(turbulence.current, {attr: {baseFrequency: '0 0'}, duration: 1.2} )
+    }
+  },[props.activeImage, props.turnOnTurbulence])
+
   return (
     <svg className="svgTurbulence">
       <filter id="go">

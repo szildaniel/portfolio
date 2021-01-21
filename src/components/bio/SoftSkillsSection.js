@@ -4,6 +4,7 @@ import media from "styled-media-query"
 import styled from "styled-components"
 import { H1 } from "../../styles/bio/H1"
 import SkillsLink from "./SkillsLink"
+import {useIntersection} from '../../helpers/hooks/useIntersection';
 
 import teamwork from "../../images/bio/skills/teamwork.png"
 import communication from "../../images/bio/skills/communication.png"
@@ -12,13 +13,14 @@ import Turbulence from "../../styles/bio/TurbulenceSVGFilter.js"
 
 const SoftSkillsSection = () => {
   const [activeImage, setActiveImage] = useState(1)
+  const [ref, entry, turnOnTurbulence] = useIntersection({threshold: 0.4});
 
   return (
     <StyledSkillsSection id="soft-skills">
       <H1 bgText={`"soft"`} color="white">
         Soft skills
       </H1>
-      <ImgCont activeImage={activeImage}>
+      <ImgCont activeImage={activeImage} ref={ref}>
         <div className="overlay"></div>
         <div className="overlay"></div>
         <div className="linksContainer">
@@ -48,7 +50,7 @@ const SoftSkillsSection = () => {
         and hard traning. I am glad because that installed in me 3 very
         importnant attributes.
       </p>
-      <Turbulence activeImage={activeImage} />
+      <Turbulence activeImage={activeImage} turnOnTurbulence={turnOnTurbulence} />
     </StyledSkillsSection>
   )
 }
@@ -114,6 +116,7 @@ const ImgCont = styled.div`
       height: 140%;
       background-position: 35% center;
       transform: skewY(15deg) translateY(-110px);
+      filter: grayscale(15%);
     }
     .overlay {
     width: 110vw;

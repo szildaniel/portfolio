@@ -14,7 +14,7 @@ const useHover = () => {
     const calculateElWidth = () => {
         const elWidth = Math.floor(linkRef.current.getBoundingClientRect().width);
         const elPadding = Number(getComputedStyle(linkRef.current).getPropertyValue('padding-left').replace('px', ''));
-        const calculatedWidth = elWidth - elPadding + 10;
+        const calculatedWidth = elWidth - elPadding + 20;
         setSvgWidth(calculatedWidth);
     }
     useEffect( () => {

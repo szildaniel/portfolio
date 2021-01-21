@@ -10,7 +10,7 @@ const LinkWrapper = styled.div`
   svg {
     position: absolute;
     top: 8px;
-    left: -8px;
+    left: -12px;
     z-index: -5;
     
     &.bio{padding-left: 50px;}
