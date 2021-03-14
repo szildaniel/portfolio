@@ -42,7 +42,9 @@ const StyledPortfolioArticle = styled.article`
     left: 5%;
     top: 3%;
   }
-
+  .flipGameTilt{
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  }
   ${media.greaterThan("medium")`
     position: relative;
     left: 50%;
@@ -52,7 +54,9 @@ const StyledPortfolioArticle = styled.article`
     justify-content: flex-start;
     align-items: flex-start;
     padding-bottom: 200px;
-
+    .portfolioItemWrapper {
+       margin: 0 clamp(40px,24.5vw,600px);
+    }
     p{
       width: 30%;
       margin-left: clamp(40px,24.5vw,600px);
@@ -73,8 +77,8 @@ const StyledPortfolioArticle = styled.article`
     .mockupsContainers{
       width: 60%;
       height: 65%;
-      left: 27%;
-      top: 6%;
+      left: 8%;
+      top: -8%;
     }
   `}
 `

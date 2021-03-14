@@ -40,6 +40,9 @@ const StyledFooter = styled.footer`
   .footerGhIcon {
     padding-left: 75px;
   }
+  .footerLiIcon{
+    z-index: 10;
+  }
   p {
     position: absolute;
     right: 0;

@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="footerTopDiv"></div>
       <div className="footerBottomDiv"></div>
       <a target="_blank" href="https://pl.linkedin.com/in/daniel-mydlarz-35349a18b">
-        <Icon icon={linkedinIcon} />
+        <Icon icon={linkedinIcon} className="footerLiIcon"/>
       </a>
       <a target="_blank" href="https://github.com/szildaniel">
         <Icon icon={githubOctocat} className="footerGhIcon"/>

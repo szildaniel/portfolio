@@ -134,11 +134,10 @@ const StyledPortfolioItem = styled.div`
   }
 
   ${media.greaterThan(`medium`)`
-    margin: 0 clamp(40px,24.5vw,600px);
     margin-top: 150px;
     width: 50vw;
     height: 675px;
-    
+  
     h2{
       padding-top: 60px;
       padding-right: 60px;
