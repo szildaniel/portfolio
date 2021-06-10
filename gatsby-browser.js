@@ -1,3 +1,13 @@
+import React from "react"
+import GlobalStyle from "./src/styles/GlobalStyle"
+
+export const wrapPageElement = ({ element }) => (
+  <>
+    <GlobalStyle />
+    {element}
+  </>
+)
+
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
