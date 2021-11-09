@@ -27,7 +27,7 @@ const ContactText = () => {
       </p>
       <p>
         Right now I'm sure that I can handle small tasks. In the near future I
-        will do bigger tasks and will become independent programmer.
+        will do more complicated tasks and will become independent developer.
       </p>
 
       <p>Feel free to contact me via form as well as an e-mail:</p>

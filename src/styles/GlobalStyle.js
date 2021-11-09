@@ -63,6 +63,7 @@ const GlobalStyle = createGlobalStyle`
     display: inline-block;
     position: relative;
     z-index: 20;
+    left: 7px;
     &:after{
       display: inline-block;
       content: url(${blueUndercover});
